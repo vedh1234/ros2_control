@@ -1623,6 +1623,7 @@ controller_interface::return_type ControllerManager::configure_controller(
     return controller_interface::return_type::ERROR;
   }
 
+  // Remove any stale exported interfaces from a prior configure cycle before re-configuring.
   cleanup_controller_exported_interfaces(*found_it);
 
   try
